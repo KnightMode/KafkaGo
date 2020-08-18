@@ -13,6 +13,11 @@
   
   For creating topic(Update the topic, partition, retention period details in the json in details directory prior to running):
    
-   cd cmd 
+   
+   cd cmd
+   
+   
    cd create_topic
+   
+   
    go run .
