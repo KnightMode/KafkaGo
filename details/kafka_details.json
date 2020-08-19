@@ -1,10 +1,10 @@
 {
     "brokers": [
-        "host.docker.internal:19092"
+        "localhost:9092"
     ],
     "details": [
         {
-            "topic": "topic-17",
+            "topic": "topic-28",
             "partition": 4,
             "replication": 1,
             "retention_period": "259200000"

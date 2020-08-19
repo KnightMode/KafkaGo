@@ -23,7 +23,7 @@ type Details struct {
 }
 
 func main() {
-	file, _ := ioutil.ReadFile("./details/kafka_details.json")
+	file, _ := ioutil.ReadFile("../../details/kafka_details.json")
 
 	data := KafkaDetails{}
 

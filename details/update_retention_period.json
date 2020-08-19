@@ -1,0 +1,11 @@
+{
+  "brokers": [
+    "localhost:9092"
+  ],
+  "details": [
+    {
+      "topic": "topic-new",
+      "retention": "25360000"
+    }
+  ]
+}

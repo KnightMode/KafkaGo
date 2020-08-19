@@ -4,12 +4,12 @@
     ],
     "details": [
         {
-            "topic": "topic-17",
+            "topic": "topasdadic-17",
             "partition": 10
         },
         {
             "topic": "topic-new",
-            "partition": 20
+            "partition": 21
         }
     ]
 }
