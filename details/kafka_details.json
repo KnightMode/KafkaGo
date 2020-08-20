@@ -1,19 +1,19 @@
 {
-    "brokers": [
-        "localhost:9092"
-    ],
-    "details": [
-        {
-            "topic": "topic-28",
-            "partition": 4,
-            "replication": 1,
-            "retention_period": "259200000"
-        },
-        {
-            "topic": "topic-8",
-            "partition": 1,
-            "replication": 1,
-            "retention_period": "259200000"
-        }
-    ]
+  "brokers": [
+    "host.docker.internal:19092"
+  ],
+  "details": [
+    {
+      "topic": "topic-17",
+      "partition": 4,
+      "replication": 1,
+      "retention_period": "259200000"
+    },
+    {
+      "topic": "topic-8",
+      "partition": 1,
+      "replication": 1,
+      "retention_period": "259200000"
+    }
+  ]
 }

@@ -1,15 +1,15 @@
 {
-    "brokers": [
-        "localhost:9092"
-    ],
-    "details": [
-        {
-            "topic": "topasdadic-17",
-            "partition": 10
-        },
-        {
-            "topic": "topic-new",
-            "partition": 21
-        }
-    ]
+  "brokers": [
+    "localhost:9092"
+  ],
+  "details": [
+    {
+      "topic": "topic-17",
+      "partition": 10
+    },
+    {
+      "topic": "topic-new",
+      "partition": 20
+    }
+  ]
 }
