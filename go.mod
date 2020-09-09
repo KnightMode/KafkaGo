@@ -1,4 +1,4 @@
-module github.com/sgbcoder/kafka-go-spike
+module github.com/sgbcoder/KafkaGo
 
 go 1.13
 
