@@ -3,13 +3,15 @@ package cmd
 import (
 	"context"
 	"fmt"
-	"github.com/confluentinc/confluent-kafka-go/kafka"
 	"os"
+	"strings"
 	"time"
+
+	"github.com/confluentinc/confluent-kafka-go/kafka"
 )
 
 func IncreasePartition(kafkaClient *kafka.AdminClient, kafkaDetails []kafka.PartitionsSpecification) {
-	fmt.Println("Running Increase Parition job.....")
+	fmt.Println("\nIncreasing Partitions....")
 	ctx, cancel := context.WithCancel(context.Background())
 	defer cancel()
 
@@ -28,6 +30,12 @@ func IncreasePartition(kafkaClient *kafka.AdminClient, kafkaDetails []kafka.Part
 	}
 
 	for _, result := range results {
-		fmt.Printf("%s\n", result)
+		if result.Error.Code() == kafka.ErrNoError {
+			fmt.Println("Topic name :", result.Topic," Partition count increased successfully")
+		} else if strings.HasPrefix(result.Error.String(), "Topic already has") {
+			fmt.Println("Topic name :", result.Topic, result.Error)
+		} else {
+		fmt.Println("Topic name :", result.Topic," Error message:", result.Error)
+		}
 	}
 }

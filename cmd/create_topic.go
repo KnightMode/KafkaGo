@@ -28,6 +28,12 @@ func CreateTopic(kafkaClient *kafka.AdminClient, kafkaDetails []kafka.TopicSpeci
 	}
 
 	for _, result := range results {
-		fmt.Printf("%s\n", result)
+		if result.Error.Code() == kafka.ErrNoError {
+			fmt.Println("Topic name: ", result.Topic, " created successfully")
+		} else if result.Error.Code() == kafka.ErrTopicAlreadyExists {
+			fmt.Println("Topic name: ", result.Topic, " already exists.")
+		} else {
+			fmt.Printf("Topic name : %s, Error message: %v \n", result.Topic, result.Error)
+		}
 	}
 }
