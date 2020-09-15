@@ -1,18 +1,13 @@
 {
-  "brokers": [
-    "localhost:9092"
-  ],
   "details": [
     {
       "topic": "topic-26",
       "partition": 8,
-      "replication": 1,
       "retention_period": "259200000"
     },
     {
       "topic": "topic-8",
       "partition": 1,
-      "replication": 1,
       "retention_period": "259200000"
     }
   ]

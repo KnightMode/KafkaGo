@@ -7,7 +7,6 @@ import (
 )
 
 type KafkaDetails struct {
-	Brokers []string `json:"brokers"`
 	Details []Detail `json:"details"`
 }
 
@@ -24,13 +23,6 @@ func (detail Detail) IsValid() bool {
 		detail.Replication == 0 {
 		fmt.Println("Missing Required Details.Exiting.....")
 		fmt.Println("Topic: ", detail.Topic, " Partition: ", detail.Partition, " Retention Period: ", detail.RetentionPeriod)
-		return false
-	}
-	return true
-}
-func (details KafkaDetails) IsValid() bool {
-	if len(details.Brokers) == 0 || details.Brokers[0] == "" {
-		fmt.Println("Broker Details are mandatory.Exiting.....")
 		return false
 	}
 	return true

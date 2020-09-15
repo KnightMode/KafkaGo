@@ -2,19 +2,22 @@ package cmd
 
 import (
 	"encoding/json"
+	"fmt"
 	"io/ioutil"
-	"os"
+
+	"github.com/sgbcoder/KafkaGo/utils"
 )
 
 func ParseDetails(kafkaConfigFilePath string) KafkaDetails {
+	replicationFactor := utils.GetReplicationFactor()
 	file, _ := ioutil.ReadFile(kafkaConfigFilePath)
 
 	data := KafkaDetails{}
 
 	_ = json.Unmarshal([]byte(file), &data)
-
-	if !data.IsValid() {
-		os.Exit(1)
+	for index := range data.Details {
+		data.Details[index].Replication = replicationFactor
 	}
+	fmt.Println("Parsed Data from kafkaConfig.json: ", data)
 	return data
 }
